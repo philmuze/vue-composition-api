@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// import axios from "axios";
 import { useDataLoader } from "@/cmp-functions/dataLoader";
 import { ref, computed } from "@vue/composition-api";
 
