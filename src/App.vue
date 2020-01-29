@@ -1,26 +1,52 @@
 <template>
   <div id="app">
-    <member-list></member-list>
+    <div class="wrapper">
+      <div class="option">
+        <h1>Option API</h1>
+        <posts-list-option></posts-list-option>
+      </div>
+      <div class="composition">
+        <h1>Composition API</h1>
+        <posts-list-composition></posts-list-composition>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import MemberList from "@/components/MemberList";
+import PostsListOption from "@/components/PostsListOption";
+import PostsListComposition from "@/components/PostsListComposition";
 export default {
   name: "app",
   components: {
-    MemberList
+    PostsListComposition,
+    PostsListOption
   }
 };
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #4a5568;
+  padding-top: 60px;
+  background: #f7fafc;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #cbd5e0;
 }
 </style>
