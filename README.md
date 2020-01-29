@@ -1,4 +1,7 @@
-# vue-composition-api
+# Example for use of Vue Composition API
+
+Slides: [Introduction to Composition API of Vue 3](https://slides.com/phmu/vue-composition-api#/)
+Live: [Live App](https://vue-composition-api.netlify.com)
 
 ## Project setup
 ```
