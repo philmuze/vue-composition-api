@@ -40,7 +40,7 @@ export default {
 .wrapper {
   display: flex;
   justify-content: space-around;
-  max-width: 42rem;
+  max-width: 64rem;
   margin: 0 auto;
 }
 
