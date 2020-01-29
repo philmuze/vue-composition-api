@@ -14,11 +14,12 @@
 
 <script>
 import axios from "axios";
-import { ref, computed, reactive } from "@vue/composition-api";
+import { ref, computed } from "@vue/composition-api";
 
 export default {
   name: "PostListComposition",
   setup() {
+    const isLoading = ref(true);
     const counter = ref(1);
 
     function increaseCounter() {
@@ -28,8 +29,6 @@ export default {
     function decreaseCounter() {
       counter.value--;
     }
-
-    const isLoading = ref(true);
 
     const posts = ref([]);
 
@@ -45,6 +44,7 @@ export default {
         );
         return response.data;
       } catch (error) {
+        // eslint-disable-next-line
         console.log(error);
       }
     }
@@ -53,30 +53,17 @@ export default {
       return posts.value.filter(post => post.id <= counter.value);
     });
 
-    const store = reactive({
-      x: 0,
-      y: 0
-    });
-
-    const area = computed(() => store.x * store.y);
-
-    console.log(area);
-
     return {
       counter,
       isLoading,
       posts,
       visiblePosts,
-      store,
-      area,
       increaseCounter,
       decreaseCounter,
       loadPosts
     };
   },
   mounted() {
-    this.store.x = 20;
-    this.store.y = 3;
     this.loadPosts();
   }
 };
