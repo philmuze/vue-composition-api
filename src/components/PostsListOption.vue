@@ -47,6 +47,7 @@ export default {
         );
         return response.data;
       } catch (error) {
+        // eslint-disable-next-line
         console.log(error);
       }
     },

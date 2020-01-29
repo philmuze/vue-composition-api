@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import { useDataLoader } from "@/cmp-functions/dataLoader";
 import { ref, computed } from "@vue/composition-api";
 
 export default {
@@ -30,24 +31,7 @@ export default {
       counter.value--;
     }
 
-    const posts = ref([]);
-
-    async function loadPosts() {
-      const data = await callAPI();
-      posts.value = data;
-    }
-
-    async function callAPI() {
-      try {
-        const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/posts"
-        );
-        return response.data;
-      } catch (error) {
-        // eslint-disable-next-line
-        console.log(error);
-      }
-    }
+    const { posts, loadPosts } = useDataLoader();
 
     const visiblePosts = computed(() => {
       return posts.value.filter(post => post.id <= counter.value);
